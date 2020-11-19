@@ -1,0 +1,97 @@
+version: "3.8"
+services: 
+  web:
+    build: .
+    command: ["./wait-for-it.sh","mongo:27017","redis:6379","elastic:9200","--","./market-place"]
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - s2l_network
+    depends_on:
+      - mongo
+      - redis
+      - elastic
+      
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+     - "s2l_mongo:/data/db"
+    networks:
+      - s2l_network
+
+  redis:
+    container_name: redis
+    restart: always
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - s2l_network
+
+  zookeeper:
+    container_name: zookeeper
+    image: "wurstmeister/zookeeper"
+    ports:
+      - "2181:2181"
+    networks:
+      - s2l_network
+
+  kafka:
+    container_name: kafka
+    image: "wurstmeister/kafka"
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: "kafka"
+      KAFKA_CREATE_TOPICS: "s2l.ecommerce.merchants,s2l.ecommerce.products"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - "./deployment_settings/plugins/kafka:/usr/local/share/kafka"
+      - "./deployment_settings/connect-standalone.properties:/opt/kafka/config/connect-standalone.properties"
+    networks:
+      - s2l_network
+    depends_on:
+      - zookeeper
+      - mongo
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.9.3
+    ports:
+      - "5044:5044"
+    volumes:
+      - "./deployment_settings/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
+      - "./deployment_settings/logstash.yml:/usr/share/logstash/config/logstash.yml"
+    networks:
+      - s2l_network
+    depends_on:
+      - kafka
+      - elastic
+
+  elastic:
+    container_name: elastic
+    restart: always
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+     
+    volumes:
+     - "s2l_elastic:/usr/share/elasticsearch/data"
+    networks:
+      - s2l_network  
+
+networks:
+  s2l_network:
+
+volumes:
+ s2l_mongo:
+ s2l_elastic:
+
+
