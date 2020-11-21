@@ -2,9 +2,10 @@
 
 ## **overview**:
 mini market place integrate with raja ongkir api
+product->cart->shipping->checkout->review
 
 ## **Demo Link**:
-http://hokdre.com
+http://hokdre.com/
 
 ## **User**:
 1. **Customer**: <br/>
