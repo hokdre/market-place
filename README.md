@@ -1,5 +1,26 @@
 # **Market-Place**
 
+## **overview**:
+mini market place integrate with raja ongkir api
+
+## **Demo Link**:
+http://hokdre.com
+
+## **User**:
+1. **Customer**: <br/>
+   email : hadinw@gmail.com <br/>
+   password : password!23Z <br/>
+2. **Merchant**:<br/>
+   1. Merchant Mike (Laptop)<br/>
+      email : mukminmike@gmail.com <br/>
+      password : password!23Z <br/>
+   2. Merchant Jainal (Handphone)<br/>
+      email : jainal@gmail.com<br/>
+      password : password!23Z <br/> 
+3. **Admin**:<br/>
+   email : superadmin@gmail.com <br/>
+   password : password!23Z <br/>
+
 ## **Teknologi Yang Digunakan** :
 1. ### **Server:**
    gorilla/mux <br/>
@@ -16,7 +37,7 @@
    2. ElasticSearch <br/>
       Elasticsearch pada project ini, saya gunakan untuk melakukan pencarian data produk dan merchant, selain data produk dan merchant tidak ada data lain yang disimpan.
 5. ### **Deployment**
-   Google Cloud Platform
+   Google VM dan storage bucket
 6. ### **APIs**
    1. Raja Ongkir <br/>
       Api raja ongkir, saya gunakan untuk melakukan fetch data ongkos kirim serta ketersedian layanan pengiriman yang ada dari kota satu ke kota yang lain. (Pengiriman POS : yang dicover oleh raja ongkir)
@@ -47,14 +68,14 @@
 
 ## **cara menjalankan program dengan instalasi biasa** :
    1. jalankan aplikasi pendukung mongodb, redis, elasticsearch, zookeeper,dan kafka server seperti biasa.
-   2. Copy monggo connector plugin pada /deployment_setting/plugins/kafka pada project ini ke /usr/local/share/kafka/plugins
+   2. Copy monggo connector plugin pada /deployment_setting/manual/plugins/kafka pada project ini ke /usr/local/share/kafka/plugins
    3. jalankan kafka connect stand alone dengan configuration file yang ada pada /deployment_setting/connect-standalone.properties
       ```
       ${instalasi_path}/bin/connect-standalone.sh  ${instalasi_path}/config/connect-standalone.properties /usr/local/share/kafka/plugins/etc/MongoSourceConnector.properties
       ```
    4. jalankan logstash dengan configuration file yang ada pada /deployment_setting/logstash.conf
       ```
-      ${instalasi_path}/bin/logstash -f ${directory}/logstash.conf
+      ${instalasi_path}/bin/logstash -f ${dir}/market-place/deployment_settings/manual/logstash.conf
       ``` 
 
 ## **cara menjalankan program dengan instalasi docker : FAILED** :
@@ -83,3 +104,20 @@
    docker-compose logs -f logstash
    docker-compose logs -f elastic
    ```
+
+## **Migrations REST API**:
+```
+curl -X GET 'http://localhost:80/elastic-product-index'
+curl -X GET 'http://localhost:80/elastic-merchant-index'
+```
+
+## **Seeder REST API**:
+| WARNING:  urutan seeder harus sesuai|
+| --- |
+```
+curl -X GET 'http://localhost:80/seed-admin'
+curl -X GET 'http://localhost:80/seed-shipping'
+curl -X GET 'http://localhost:80/seed-customer'
+curl -X GET 'http://localhost:80/seed-merchant'
+curl -X GET 'http://localhost:80/seed-product'
+```

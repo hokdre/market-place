@@ -51,8 +51,8 @@ services:
       KAFKA_CREATE_TOPICS: "s2l.ecommerce.merchants,s2l.ecommerce.products"
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
-      - "./deployment_settings/plugins/kafka:/usr/local/share/kafka"
-      - "./deployment_settings/connect-standalone.properties:/opt/kafka/config/connect-standalone.properties"
+      - "./deployment_settings/docker/plugins/kafka:/usr/local/share/kafka"
+      - "./deployment_settings/docker/connect-standalone.properties:/opt/kafka/config/connect-standalone.properties"
     networks:
       - s2l_network
     depends_on:
@@ -64,8 +64,8 @@ services:
     ports:
       - "5044:5044"
     volumes:
-      - "./deployment_settings/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
-      - "./deployment_settings/logstash.yml:/usr/share/logstash/config/logstash.yml"
+      - "./deployment_settings/docker/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
+      - "./deployment_settings/docker/logstash.yml:/usr/share/logstash/config/logstash.yml"
     networks:
       - s2l_network
     depends_on:
@@ -81,7 +81,6 @@ services:
       - "9300:9300"
     environment:
       - discovery.type=single-node
-     
     volumes:
      - "s2l_elastic:/usr/share/elasticsearch/data"
     networks:

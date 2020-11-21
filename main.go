@@ -66,7 +66,7 @@ func main() {
 	log.Println("Setup Dependencies : finish!")
 
 	log.Println("Server: starting!")
-	port := ":8080"
+	port := ":80"
 	readTimeOut := 2 * time.Second
 	writeTimeOut := 2 * time.Second
 	log.Printf("Starting server on port : %s", port)
