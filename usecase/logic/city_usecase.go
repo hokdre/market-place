@@ -28,7 +28,7 @@ func NewCityUsecase(
 }
 
 func (c *cityUsecase) GetCity(ctx context.Context, keyword string) ([]domain.City, error) {
-	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 6*time.Second)
 	defer cancel()
 	return c.cityRepo.GetCity(ctx, keyword)
 }

@@ -29,7 +29,7 @@ func NewOngkirUsecase(
 }
 
 func (o *ongkirUsecase) GetOngkir(ctx context.Context, origin, destination string, weight float64, providers []string) ([]domain.Ongkir, error) {
-	ctx, cancel := context.WithTimeout(ctx, o.contextTimeout)
+	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 	defer cancel()
 
 	ongkirs, err := o.ongkirRepo.GetOngkir(ctx, origin, destination, providers)

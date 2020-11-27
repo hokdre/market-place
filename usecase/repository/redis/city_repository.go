@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"regexp"
 	"strings"
 	"time"
@@ -94,7 +95,7 @@ func (c *cityRepo) getCitiesCache(ctx context.Context) ([]domain.City, error) {
 
 func (c *cityRepo) fetchCityRajaOngkir(ch chan ResponseRajaOngkir, ctx context.Context) {
 	url := "https://api.rajaongkir.com/starter/city"
-	key := "cb854fe2b7b3bf2ca1f39d0c62558d68"
+	key := os.Getenv("RAJA_ONGKIR_KEY")
 	req, _ := http.NewRequest("GET", url, nil)
 	req.Header.Add("key", key)
 
