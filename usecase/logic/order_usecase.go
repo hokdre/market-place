@@ -354,21 +354,22 @@ func (o *orderUsecase) Create(ctx context.Context, input adapter.OrderCreateInpu
 							}
 						}
 						if index != -1 {
-							newItems := []domain.Item{}
-							copy(newItems, cart.Items)
+							var mutex sync.Mutex
+							mutex.Lock()
+							defer mutex.Unlock()
 
+							newItems := []domain.Item{}
 							firstItem := 0
 							lastItem := len(cart.Items) - 1
-							if index == firstItem && index == lastItem {
+							if len(cart.Items) == 1 {
 								newItems = []domain.Item{}
 							} else if index == firstItem {
-								newItems = append(newItems, newItems[index+1:]...)
+								newItems = append(newItems, cart.Items[index+1:]...)
 							} else if index == lastItem {
-								newItems = append(newItems, newItems[:index]...)
+								newItems = append(newItems, cart.Items[:index]...)
 							} else {
-								newItems = append(newItems[:index], newItems[index+1:]...)
+								newItems = append(cart.Items[:index], cart.Items[index+1:]...)
 							}
-
 							cart.Items = newItems
 						}
 					}
