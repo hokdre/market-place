@@ -145,6 +145,8 @@ password : password!23Z <br/>
    ![alt text](https://github.com/hokdre/marketplace/blob/master/8. customer review product.png?raw=true)
 
 ### **Admin**:
+email : superadmin@gmail.com <br/>
+password : password!23Z <br/>
 1. Melihat dan Memproses Pembayaran
    ![alt text](https://github.com/hokdre/marketplace/blob/master/9. Admin Accept Transfer.png?raw=true)
 2. Melihat data customer
@@ -153,6 +155,8 @@ password : password!23Z <br/>
    ![alt text](https://github.com/hokdre/marketplace/blob/master/11. Admin Merchant Info.png?raw=true)
 
 ### **Merchant**:
+email : mukminmike@gmail.com <br/>
+password : password!23Z <br/>
 1. Dashboard Merchant
    ![alt text](https://github.com/hokdre/marketplace/blob/master/12. Mechant Dashboard.png?raw=true)
 2. Melihat List Order
