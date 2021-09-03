@@ -128,43 +128,43 @@ curl -X GET 'http://localhost:80/seed-product'
 email : hadinw@gmail.com <br/>
 password : password!23Z <br/>
 1. Mencari Produk<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/1.Customer_Search_Product.png?raw=true)
+   ![alt text](./blop/1.Customer_Search_Product.png?raw=true)
 2. Menambahkan Produk Ke dalam Cart<br/>  
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/2Customer_Add_To_Cart.png?raw=true)
+   ![alt text](./blop/2Customer_Add_To_Cart.png?raw=true)
 3. Memproses Produk Pada Cart<br/> 
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/3.Customer_Cart.png?raw=true)
+   ![alt text](./blop/3.Customer_Cart.png?raw=true)
 4. Melakukan Proses Checkout<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/4.Customer Checkout.png?raw=true)
+   ![alt text](./blop/4.Customer Checkout.png?raw=true)
 5. Mengupload Bukti Transfer<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/5.Customer_Upload_Transfer.png?raw=true)
+   ![alt text](./blop/5.Customer_Upload_Transfer.png?raw=true)
 6. Memproses Penyelesaian Order<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/6.customer_order_telah_sampai.png?raw=true)
+   ![alt text](./blop/6.customer_order_telah_sampai.png?raw=true)
 7. Memberikan Review Merchant<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/7.customer_review_merchant.png?raw=true)
+   ![alt text](./blop/7.customer_review_merchant.png?raw=true)
 8. Memberikan Review Produk<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/8.customer_review_product.png?raw=true)
+   ![alt text](./blop/8.customer_review_product.png?raw=true)
 
 ### **Admin**:
 email : superadmin@gmail.com <br/>
 password : password!23Z <br/>
 1. Melihat dan Memproses<br/> Pembayaran
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/9.Admin_Accept_Transfer.png?raw=true)
+   ![alt text](./blop/9.Admin_Accept_Transfer.png?raw=true)
 2. Melihat data customer<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/10.Admin_list_customer.png?raw=true)
+   ![alt text](./blop/10.Admin_list_customer.png?raw=true)
 3. Melihat Data Merchant<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/11.Admin_Merchant_Info.png?raw=true)
+   ![alt text](./blop/11.Admin_Merchant_Info.png?raw=true)
 
 ### **Merchant**:
 email : mukminmike@gmail.com <br/>
 password : password!23Z <br/>
 1. Dashboard Merchant<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/12.Mechant_Dashboard.png?raw=true)
+   ![alt text](./blop/12.Mechant_Dashboard.png?raw=true)
 2. Melihat List Order<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/13.Merchant_List_Order.png?raw=true)
+   ![alt text](./blop/13.Merchant_List_Order.png?raw=true)
 3. Menginput Resi Order<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/14.Merchant_Input_Resi.png?raw=true)
+   ![alt text](./blop/14.Merchant_Input_Resi.png?raw=true)
 4. Melihat List Product<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/15.Merchant_List_Product.png?raw=true)
+   ![alt text](./blop/15.Merchant_List_Product.png?raw=true)
 5. Mengupdate Product<br/>
-   ![alt text](https://github.com/hokdre/market-place/tree/master/blop/16.Merchant_Update_Product.png?raw=true)
+   ![alt text](./blop/16.Merchant_Update_Product.png?raw=true)
    
