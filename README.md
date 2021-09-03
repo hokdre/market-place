@@ -130,12 +130,13 @@ password : password!23Z <br/>
 1. Mencari Produk<br/>
    ![alt text](./blop/1.Customer_Search_Product.png?raw=true)
 2. Menambahkan Produk Ke dalam Cart<br/>  
-   ![alt text](./blop/2Customer_Add_To_Cart.png?raw=true)
+   ![alt text](./blop/2.Customer_Add_To_Cart.png?raw=true)
 3. Memproses Produk Pada Cart<br/> 
    ![alt text](./blop/3.Customer_Cart.png?raw=true)
-4. Melakukan Proses Checkout<br/>
-   ![alt text](./blop/4.Customer Checkout.png?raw=true)
-5. Mengupload Bukti Transfer<br/>
+4. Melakukan Proses Checkout <br/>
+   ![alt text](./blop/4.Customer_Checkout.png?raw=true)
+   
+5. Mengupload Bukti Transfer <br/>
    ![alt text](./blop/5.Customer_Upload_Transfer.png?raw=true)
 6. Memproses Penyelesaian Order<br/>
    ![alt text](./blop/6.customer_order_telah_sampai.png?raw=true)
